@@ -125,7 +125,7 @@ con este comando, estaremos conectados con nuestro Github en la nube.
 
 ## 5. Realización de commits
 
-- En primer lugar añadimos el archivo.
+- En primer lugar añadimos el archivo al stagging area.
 
 ```bash
 git add <archivo>
