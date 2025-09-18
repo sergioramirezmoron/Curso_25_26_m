@@ -39,6 +39,7 @@ Start-Service ssh-agent
 ### Al tenerla creada
 
 - Tener una clave SSH, si no la tenemos, crearla con: ssh-keygen -t ed25519 -C "correo".
+  ![imagen ssh](/img/keygen.png)
 
 ```bash
 Usuario@DESKTOP-9P3D1AN MINGW64 ~/Documents/Curso_25_26_m (main)
