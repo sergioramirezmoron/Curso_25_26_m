@@ -2,6 +2,8 @@
 
 #### Deberemos tener creado el respectivo repositorio.
 
+## 1. Verificar dependencias
+
 #### Verificar tener git con: git --version.
 
 #### Verificar tener node con: node --version.
@@ -10,11 +12,11 @@
 
 #### A su vez, deberemos asegurarnos de que hemos hecho el git init correspondiente.
 
-## Instalación de la clave en Github
+## 2. Instalación de la clave en Github
 
-### Requisitos previos:
+### 2.1 Requisitos previos:
 
-## Comprobar si tenemos clave
+#### Comprobar si tenemos clave
 
 - Escribir:
 
@@ -36,7 +38,7 @@ Get-Service ssh-agent | Set-Service -StartupType Automatic
 Start-Service ssh-agent
 ```
 
-### Al tenerla creada
+### 2.2 Al tenerla creada
 
 - Tener una clave SSH, si no la tenemos, crearla con: ssh-keygen -t ed25519 -C "correo".
   ![imagen ssh](/img/keygen.png)
@@ -68,20 +70,22 @@ The key's randomart image is:
 
 ```
 
-### Realización:
+### 2.3 Realización:
 
 - Debemos ir a
 
 ```bash
-cat ~/.ssh/id_ed25519.pub para poder obtener nuestra clave con nuestro correo.
+cat ~/.ssh/id_ed25519.pub
 ```
+
+> Para poder obtener nuestra clave con nuestro correo.
 
 - Vamos a Github > Settings > SSH and GPG keys > New SSH Key.
 - Le ponemos un título personalizado y pegamos la clave que nos devolvió el comando anterior.
 
 ![imagen ssh](/img/keygit.png)
 
-## Añadir la clave a Agent
+## 3. Añadir la clave a Agent
 
 - Evaluamos si tenemos el comando funcionando.
 
@@ -99,7 +103,7 @@ ssh-add ~/.ssh/id_ed25519
 
 el cual nos añade la identidad si no hubo ningún error.
 
-## Verificar la clave
+## 3.1 Verificar la clave
 
 - Verificamos la clave con el siguiente comando:
 
@@ -119,7 +123,7 @@ git remote add origin git@github.com:sergioramirezmoron/Curso_25_26_m.git
 
 con este comando, estaremos conectados con nuestro Github en la nube.
 
-## Realización de commits
+## 4. Realización de commits
 
 - En primer lugar añadimos el archivo.
 
