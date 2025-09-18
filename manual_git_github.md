@@ -1,11 +1,11 @@
-# Manual configurar github por ssh
+# Manual para configurar GitHub por ssh
 
-## INDICE
+## ÍNDICE
 
 ### Requisitos previos
 
 - 1.1 Verificar dependencias (Git, Node y NPM)
-- 1.2 Inicializar repositorio con git init
+- 1.2 Inicializar un repositorio con git init
 
 ### Configuración de la clave SSH en GitHub
 
@@ -39,15 +39,15 @@
 
 - Verificar tener npm con: npm --version.
 
-## 1.2 Inicializar repositorio con git init
+## 1.2 Inicializar un repositorio con git init
 
-Deberemos asegurarnos de que hemos hecho el git init correspondiente.
+Debemos asegurarnos de que hemos hecho el git init correspondiente.
 
-## 2. Instalación de la clave en Github
+## 2. Instalación de la clave en GitHub
 
 ### 2.1 Comprobar si existe una clave SSH:
 
-Si aparece algún archivo como id_ed25519 o id_rsa, ya tienes una clave generada.
+Si aparece algún archivo como id_ed25519, ya tienes una clave generada.
 Si no, deberás crear una nueva.
 Comprobar con:
 
@@ -55,7 +55,7 @@ Comprobar con:
 ls -la ~/.ssh/
 ```
 
-EN windows, para asegurarnos de que ssh-agent está activo debemos usar en powershell los siguientes comandos:
+En windows, para asegurarnos de que ssh-agent está activo debemos usar en powershell los siguientes comandos:
 
 ```powershell
 Get-Service ssh-agent | Set-Service -StartupType Automatic
@@ -132,7 +132,7 @@ Verificamos la clave con el siguiente comando:
 
 ### 4.2 Configurar el repositorio remoto
 
-Con el siguiente comando estaremos conectados con nuestro Github en la nube:
+Con el siguiente comando conectaremos nuestro repositorio local con nuestro Github en la nube:
 
 ```bash
 git remote add origin git@github.com:sergioramirezmoron/Curso_25_26_m.git
