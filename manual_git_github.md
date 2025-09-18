@@ -4,9 +4,9 @@
 
 #### Verificar tener git con: git --version.
 
-#### Verificar tener git con: node --version.
+#### Verificar tener node con: node --version.
 
-#### Verificar tener git con: npm --version.
+#### Verificar tener npm con: npm --version.
 
 #### A su vez, deberemos asegurarnos de que hemos hecho el git init correspondiente.
 
