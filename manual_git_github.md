@@ -144,7 +144,7 @@ git remote add origin git@github.com:sergioramirezmoron/Curso_25_26_m.git
 
 ### 5.1 Añadir archivos al staging area
 
-- En primer lugar añadimos el archivo al staging area.
+En primer lugar añadimos el archivo al staging area.
 
 ```bash
 git add <archivo>
@@ -152,7 +152,7 @@ git add <archivo>
 
 ### 5.2 Crear commits
 
-- Realizamos un primer commit (recomendado/obligatorio en inglés)
+Realizamos un primer commit (recomendado/obligatorio en inglés)
 
 ```bash
 git commit -m "nombre del commit"
@@ -160,7 +160,7 @@ git commit -m "nombre del commit"
 
 ### 5.3 Subir cambios al repositorio remoto
 
-- Subir commit
+Subir commit
 
 ```bash
 git push origin main
