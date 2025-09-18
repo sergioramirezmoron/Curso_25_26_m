@@ -39,20 +39,20 @@
 
 - Verificar tener npm con: npm --version.
 
-> A su vez, deberemos asegurarnos de que hemos hecho el git init correspondiente.
+## 1.2 Inicializar repositorio con git init
+
+Deberemos asegurarnos de que hemos hecho el git init correspondiente.
 
 ## 2. Instalación de la clave en Github
 
-### 2.1 Requisitos previos:
-
-#### Comprobar si tenemos clave
+### 2.1 Comprobar si existe una clave SSH:
 
 Si aparece algún archivo como id_ed25519 o id_rsa, ya tienes una clave generada.
 Si no, deberás crear una nueva.
 Comprobar con:
 
 ```bash
-$ ls -la ~/.ssh/
+ls -la ~/.ssh/
 ```
 
 EN windows, para asegurarnos de que ssh-agent está activo debemos usar en powershell los siguientes comandos:
@@ -79,7 +79,7 @@ ssh-keygen -t ed25519 -C "correo"
 
 ![imagen ssh](/img/keygen.png)
 
-### 2.3 Realización:
+### 2.3 Añadir clave pública a GitHub:
 
 Debemos ir a
 
@@ -126,7 +126,7 @@ Verificamos la clave con el siguiente comando:
  ssh -T git@github.com
 ```
 
-> En caso de que nos diga Hi <usuario>, estará correctamente conectado. En caso contrario, no lo estará.
+> En caso de que nos diga Hi "usuario", estará correctamente conectado. En caso contrario, no lo estará.
 
 ![imagen ssh](/img/githubT.png)
 
