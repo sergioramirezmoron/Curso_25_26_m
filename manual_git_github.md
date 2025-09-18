@@ -86,7 +86,7 @@ cat ~/.ssh/id_ed25519.pub para poder obtener nuestra clave con nuestro correo.
 - Evaluamos si tenemos el comando funcionando.
 
 ```bash
-eval "$(ssh-agent -s)".
+eval "$(ssh-agent -s)"
 ```
 
 > En caso de que no funcione, deberemos ir a la terminal de powershell.
@@ -104,7 +104,7 @@ el cual nos añade la identidad si no hubo ningún error.
 - Verificamos la clave con el siguiente comando:
 
 ```bash
- ssh -T git@github.com.
+ ssh -T git@github.com
 ```
 
 > En caso de que nos diga Hi <usuario>, estará correctamente conectado. En caso contrario, no estará correctamente conectado.
