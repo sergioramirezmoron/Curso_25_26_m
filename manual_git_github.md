@@ -103,7 +103,7 @@ ssh-add ~/.ssh/id_ed25519
 
 el cual nos añade la identidad si no hubo ningún error.
 
-## 3.1 Verificar la clave
+## 4. Verificar la clave
 
 - Verificamos la clave con el siguiente comando:
 
@@ -123,7 +123,7 @@ git remote add origin git@github.com:sergioramirezmoron/Curso_25_26_m.git
 
 con este comando, estaremos conectados con nuestro Github en la nube.
 
-## 4. Realización de commits
+## 5. Realización de commits
 
 - En primer lugar añadimos el archivo.
 
