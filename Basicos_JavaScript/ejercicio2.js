@@ -12,6 +12,9 @@ const carasDado = [1, 2, 3, 4, 5, 6];
  */
 function simular(numTiradas) {
   const numeros = [];
+  let numeroRepetido = 0;
+  let repeticiones = 0;
+
   for (numTiradas; numTiradas > 0; numTiradas--) {
     numeros.push(tirarDado());
   }
@@ -19,12 +22,18 @@ function simular(numTiradas) {
   for (let i = 0; i < numeros.length; i++) {
     let contador = 0;
     for (let j = 0; j < numeros.length; j++) {
-      if (numeros[i] === numeros[j]) {
+      if (numeros[i] == numeros[j]) {
         contador++;
       }
     }
-    return `El número ${numeros[i]} se ha repetido ${contador} veces`;
+
+    if (contador > repeticiones) {
+      repeticiones = contador;
+      numeroRepetido = numeros[i];
+    }
   }
+
+  return `El número ${numeroRepetido} se ha repetido ${repeticiones} veces`;
 }
 
 /** Simula el lanzamiento de un dado de 6 caras.
