@@ -35,7 +35,6 @@ edades.map((edad) => edad * 2); // multiplica por 2 cada elemento del array edad
 // devuelve un nuevo array con los elementos que cumplen la condición de la función aplicada.
 edades.filter((edad) => edad >= 18); */
 
-
 // *****************************************************************************************************************************************
 // *****************************************************************************************************************************************
 // *****************************************************************************************************************************************
@@ -61,3 +60,97 @@ parametro un array de nombres y me los devuelva con la letra capital en mayuscul
  la primera de los apellidos).
 
 */
+
+/**
+ * Convierte todos los nombres en un array a mayúsculas.
+ * @param {string[]} nombres - Array de nombres.
+ * @return {string[]} - Nuevo array con los nombres en mayúsculas.
+ */
+function mayusculas(nombres) {
+  nombres.map((nombre) => nombre.toUppercase());
+}
+
+/**
+ * Aplica el IVA (21%) a cada precio en un array de precios.
+ * @param {number[]} precios - Array de precios.
+ * @return {number[]} - Nuevo array con los precios con IVA incluido.
+ */
+function preciosIva(precios) {
+  precios.map((precio) => precio * 1.21);
+}
+
+/**
+ * Devuelve un nuevo array con los números impares elevados al cuadrado.
+ * @param {number[]} numeros - Array de números.
+ * @return {number[]} - Nuevo array con los números impares al cuadrado.
+ */
+function imparesCuadrado(numeros) {
+  numeros.filter((num) => {
+    if (num % 2 !== 0) {
+      return num * num;
+    } else {
+      return null;
+    }
+  });
+}
+
+/**
+ * Normaliza los emails eliminando espacios al principio y al final.
+ * @param {string[]} emails - Array de emails.
+ * @return {string[]} - Nuevo array con los emails normalizados.
+ */
+function normalizarEmail(emails) {
+  return emails.map((email) => {
+    while (email[0] === " ") {
+      email = email.slice(1);
+    }
+    while (email[email.length - 1] === " ") {
+      email = email.slice(0, -1);
+    }
+    return email;
+  });
+}
+
+/**
+ * Filtra los nombres cuya longitud es mayor que el tamaño especificado.
+ * @param {string[]} nombres - Array de nombres.
+ * @param {number} tamaño - Tamaño mínimo para filtrar.
+ * @return {string[]} - Nuevo array con los nombres que cumplen la condición.
+ */
+function filtrarLongitud(nombres, tamaño) {
+  nombres.map((nombre) => {
+    return nombre.length > tamaño ? nombre : null;
+  });
+}
+
+/**
+ * Normaliza los nombres propios capitalizando la primera letra de cada palabra.
+ * @param {string[]} nombres - Array de nombres.
+ * @return {string[]} - Nuevo array con los nombres normalizados.
+ */
+function normalizarNombresPropios(nombres) {
+  return nombres.map((nombre) => {
+    let resultado = "";
+    let inicioPalabra = 0;
+
+    for (let i = 0; i <= nombre.length; i++) {
+      if (i === nombre.length || nombre[i] === " ") {
+        let palabra = nombre.slice(inicioPalabra, i);
+
+        if (palabra.length > 0) {
+          palabra = palabra[0].toUpperCase() + palabra.slice(1).toLowerCase();
+
+          if (resultado === "") {
+            resultado = palabra;
+          } else {
+            resultado += " " + palabra;
+          }
+        }
+
+        inicioPalabra = i + 1;
+      }
+    }
+
+    return resultado;
+  });
+}
