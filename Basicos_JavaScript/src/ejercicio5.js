@@ -152,3 +152,26 @@ function normalizarNombresPropios(nombres = []) {
     return resultado;
   });
 }
+
+// Tests rápidos
+function tests() {
+  console.log("➡️ mayusculas:", mayusculas(["juan", "ana", "pepe"])); 
+  // ["JUAN", "ANA", "PEPE"]
+
+  console.log("➡️ preciosIva:", preciosIva([100, 50, 20])); 
+  // [121, 60.5, 24.2]
+
+  console.log("➡️ imparesCuadrado:", imparesCuadrado([1,2,3,4,5])); 
+  // [1, 9, 25]
+
+  console.log("➡️ normalizarEmail:", normalizarEmail(["  test@gmail.com ", "user@yahoo.com  "])); 
+  // ["test@gmail.com", "user@yahoo.com"]
+
+  console.log("➡️ filtrarLongitud:", filtrarLongitud(["Ana", "Roberto", "Luis"], 4)); 
+  // ["Roberto"]
+
+  console.log("➡️ normalizarNombresPropios:", normalizarNombresPropios(["juan perez", "ANA lopez"])); 
+  // ["Juan Perez", "Ana Lopez"]
+}
+
+tests();
