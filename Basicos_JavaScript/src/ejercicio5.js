@@ -66,7 +66,7 @@ parametro un array de nombres y me los devuelva con la letra capital en mayuscul
  * @param {string[]} nombres - Array de nombres.
  * @return {string[]} - Nuevo array con los nombres en mayúsculas.
  */
-function mayusculas(nombres) {
+function mayusculas(nombres = []) {
   nombres.map((nombre) => nombre.toUppercase());
 }
 
@@ -75,7 +75,7 @@ function mayusculas(nombres) {
  * @param {number[]} precios - Array de precios.
  * @return {number[]} - Nuevo array con los precios con IVA incluido.
  */
-function preciosIva(precios) {
+function preciosIva(precios = []) {
   precios.map((precio) => precio * 1.21);
 }
 
@@ -84,7 +84,7 @@ function preciosIva(precios) {
  * @param {number[]} numeros - Array de números.
  * @return {number[]} - Nuevo array con los números impares al cuadrado.
  */
-function imparesCuadrado(numeros) {
+function imparesCuadrado(numeros = []) {
   numeros.filter((num) => {
     if (num % 2 !== 0) {
       return num * num;
@@ -96,11 +96,11 @@ function imparesCuadrado(numeros) {
 
 /**
  * Normaliza los emails eliminando espacios al principio y al final.
- * @param {string[]} emails - Array de emails.
- * @return {string[]} - Nuevo array con los emails normalizados.
+ * @param {string} emails - Array de emails.
+ * @return Nuevo array con los emails normalizados.
  */
-function normalizarEmail(emails) {
-  return emails.map((email) => {
+function normalizarEmail(emails = []) {
+    emails.map((email) => {
     while (email[0] === " ") {
       email = email.slice(1);
     }
@@ -113,14 +113,12 @@ function normalizarEmail(emails) {
 
 /**
  * Filtra los nombres cuya longitud es mayor que el tamaño especificado.
- * @param {string[]} nombres - Array de nombres.
+ * @param {string} nombres - Array de nombres.
  * @param {number} tamaño - Tamaño mínimo para filtrar.
- * @return {string[]} - Nuevo array con los nombres que cumplen la condición.
+ * @return  Nuevo array con los nombres que cumplen la condición.
  */
-function filtrarLongitud(nombres, tamaño) {
-  nombres.map((nombre) => {
-    return nombre.length > tamaño ? nombre : null;
-  });
+function filtrarLongitud(names = [], size = 0) {
+    return names.filter(name => name.length > size); 
 }
 
 /**
@@ -128,7 +126,7 @@ function filtrarLongitud(nombres, tamaño) {
  * @param {string[]} nombres - Array de nombres.
  * @return {string[]} - Nuevo array con los nombres normalizados.
  */
-function normalizarNombresPropios(nombres) {
+function normalizarNombresPropios(nombres = []) {
   return nombres.map((nombre) => {
     let resultado = "";
     let inicioPalabra = 0;
