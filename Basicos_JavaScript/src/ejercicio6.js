@@ -112,14 +112,13 @@ const sinLibros = usuarios.filter(
 );
 console.log(sinLibros);
 
-
 const productos = [
-    {id: 1, nombre: 'Laptop', precio: 1200, stock: 5, categoria: 'Tecnología'},
-    {id: 2, nombre: 'Camiseta', precio: 35, stock: 15, categoria: 'Ropa'},
-    {id: 3, nombre: 'Monitor', precio: 300, stock: 0, categoria: 'Tecnología'},
-    {id: 4, nombre: 'Libro', precio: 20, stock: 50, categoria: 'Literatura'},
-    {id: 5, nombre: 'Móvil', precio: 800, stock: 10, categoria: 'Tecnología'},
-    {id: 6, nombre: 'Pantalón', precio: 60, stock: 5, categoria: 'Ropa'}    
+  { id: 1, nombre: "Laptop", precio: 1200, stock: 5, categoria: "Tecnología" },
+  { id: 2, nombre: "Camiseta", precio: 35, stock: 15, categoria: "Ropa" },
+  { id: 3, nombre: "Monitor", precio: 300, stock: 0, categoria: "Tecnología" },
+  { id: 4, nombre: "Libro", precio: 20, stock: 50, categoria: "Literatura" },
+  { id: 5, nombre: "Móvil", precio: 800, stock: 10, categoria: "Tecnología" },
+  { id: 6, nombre: "Pantalón", precio: 60, stock: 5, categoria: "Ropa" },
 ];
 
 // Se pide:
@@ -127,3 +126,34 @@ const productos = [
 // 2.-Calcular el valor total del inventario (precio * stock) de todos los productos.
 // 3.-Filtar los productos que pertenecen a la categoría 'Tecnología' y tienen un precio mayor a 500.
 // 4.- Crear un nuevo array de productos aplicando un descuento del 10% a todos los productos de la categoría 'Ropa'.
+
+//1.
+const stock = productos
+  .filter((producto) => producto.stock === 0)
+  .map((product) => product.nombre);
+console.log(stock);
+
+//2.
+const precioProd = productos.reduce(
+  (total, producto) => total + producto.precio * producto.stock,
+  0
+);
+console.log(precioProd);
+
+//3.
+const productosTec = productos.filter(
+  (producto) => producto.categoria === "Tecnología" && producto.precio > 500
+);
+console.log(productosTec);
+
+//4.
+const productosConDescuento = productos.map((producto) => {
+  if (producto.categoria === "Ropa") {
+    return {
+      ...producto,
+      precio: producto.precio * 0.9,
+    };
+  }
+  return producto;
+});
+console.log(productosConDescuento);
