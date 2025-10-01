@@ -128,32 +128,56 @@ const productos = [
 // 4.- Crear un nuevo array de productos aplicando un descuento del 10% a todos los productos de la categoría 'Ropa'.
 
 //1.
-const stock = productos
-  .filter((producto) => producto.stock === 0)
-  .map((product) => product.nombre);
+/** Obtiene los nombres de los productos sin stock.
+ * @param {Array} productos - El array de productos.
+ * @return {} - Lista con los nombres de los productos sin stock.
+ */
+function obtenerProductosSinStock(productos) {
+  return productos
+    .filter((producto) => producto.stock === 0)
+    .map((producto) => producto.nombre);
+}
 console.log(stock);
 
 //2.
-const precioProd = productos.reduce(
-  (total, producto) => total + producto.precio * producto.stock,
-  0
-);
+/** Calcula el valor total del inventario en base al precio y stock de cada producto.
+ * @param {Array} productos - El array de productos.
+ * @return {} - El valor total del inventario.
+ */
+function calcularValorInventario(productos) {
+  return productos.reduce(
+    (total, producto) => total + producto.precio * producto.stock,
+    0
+  );
+}
 console.log(precioProd);
 
 //3.
-const productosTec = productos.filter(
-  (producto) => producto.categoria === "Tecnología" && producto.precio > 500
-);
+/** Filtra los productos de la categoría "Tecnología" con precio mayor a 500.
+ * @param {Array} productos - El array de productos.
+ * @return {} - Lista de productos de tecnología con precio > 500.
+ */
+function filtrarProductosTecnologia(productos) {
+  return productos.filter(
+    (producto) => producto.categoria === "Tecnología" && producto.precio > 500
+  );
+}
 console.log(productosTec);
 
 //4.
-const productosConDescuento = productos.map((producto) => {
-  if (producto.categoria === "Ropa") {
-    return {
-      ...producto,
-      precio: producto.precio * 0.9,
-    };
-  }
-  return producto;
-});
+/** Aplica un descuento del 10% a los productos de la categoría "Ropa".
+ * @param {Array} productos - El array de productos.
+ * @return {} - Nuevo array de productos con el descuento aplicado en ropa.
+ */
+function aplicarDescuentoRopa(productos) {
+  return productos.map((producto) => {
+    if (producto.categoria === "Ropa") {
+      return {
+        ...producto,
+        precio: producto.precio * 0.9,
+      };
+    }
+    return producto;
+  });
+}
 console.log(productosConDescuento);
