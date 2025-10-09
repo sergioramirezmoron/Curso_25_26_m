@@ -1,5 +1,5 @@
 {
-  "name": "to-do-localstorage",
+  "name": "proyecto-login",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,5 @@
   },
   "devDependencies": {
     "vite": "^7.1.7"
-  },
-  "dependencies": {
-    "uid": "^2.0.2"
   }
 }
