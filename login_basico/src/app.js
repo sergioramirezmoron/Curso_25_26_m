@@ -44,14 +44,12 @@ export function initialApp() {
   formRegister.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // Obtenemos los valores directamente
     const usernameInput = formRegister.querySelector('input[name="username"]');
     const passwordInput = formRegister.querySelector('input[name="password"]');
 
     const username = String(usernameInput.value || "").trim();
     const password = String(passwordInput.value || "").trim();
 
-    // Validaciones básicas
     if (!username || !password || password.length < 3) {
       messageRegister.textContent = "Datos inválidos";
       messageRegister.style.color = "red";
@@ -66,7 +64,6 @@ export function initialApp() {
       return;
     }
 
-    // Encriptamos la contraseña
     const passwordHash = bcrypt.hashSync(password, 10);
     const newUser = {
       id: users.length ? Math.max(...users.map((u) => u.id || 0)) + 1 : 1,
