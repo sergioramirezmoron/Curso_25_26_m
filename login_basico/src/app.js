@@ -24,8 +24,8 @@ export function initialApp() {
     e.preventDefault();
 
     // Obtenemos los valores directamente de los inputs
-    const usernameInput = form.querySelector('input[name="username"]');
-    const passwordInput = form.querySelector('input[name="password"]');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
 
     const username = String(usernameInput.value || "");
     const password = String(passwordInput.value || "");
@@ -44,8 +44,8 @@ export function initialApp() {
   formRegister.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const usernameInput = formRegister.querySelector('input[name="username"]');
-    const passwordInput = formRegister.querySelector('input[name="password"]');
+    const usernameInput = document.getElementById('reg-username');
+    const passwordInput = document.getElementById('reg-password');
 
     const username = String(usernameInput.value || "").trim();
     const password = String(passwordInput.value || "").trim();
@@ -66,7 +66,7 @@ export function initialApp() {
 
     const passwordHash = bcrypt.hashSync(password, 10);
     const newUser = {
-      id: users.length ? Math.max(...users.map((u) => u.id || 0)) + 1 : 1,
+      id: users.length > 0 ? Math.max(...users.map((u) => u.id || 0)) + 1 : 1,
       username,
       passwordHash,
       rol: "invitado",
