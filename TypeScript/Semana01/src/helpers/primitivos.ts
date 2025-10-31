@@ -248,10 +248,64 @@ export const calculadora = (operacion: Operacion): number => {
 export const testCalculadora = (): void => {
   console.log(calculadora({ tipo: "suma", operando1: 10, operando2: 5 }));
   console.log(calculadora({ tipo: "resta", operando1: 10, operando2: 5 }));
-  console.log(calculadora({ tipo: "multiplicacion", operando1: 10, operando2: 5 }));
+  console.log(
+    calculadora({ tipo: "multiplicacion", operando1: 10, operando2: 5 })
+  );
   console.log(calculadora({ tipo: "division", operando1: 10, operando2: 5 }));
   console.log(calculadora({ tipo: "suma", operando1: 10, operando2: 0 }));
   console.log(calculadora({ tipo: "resta", operando1: 10, operando2: 0 }));
-  console.log(calculadora({ tipo: "multiplicacion", operando1: 10, operando2: 0 }));
+  console.log(
+    calculadora({ tipo: "multiplicacion", operando1: 10, operando2: 0 })
+  );
   console.log(calculadora({ tipo: "division", operando1: 10, operando2: 0 }));
 };
+
+// Valor desconocido
+let valorDesconocido: unknown = "No se";
+if (typeof valorDesconocido === "string") {
+  console.log(valorDesconocido);
+}
+
+// Para añadir parametros opcionales a una funcion:
+/* function sumaVarios(n1:number = 0, n2:number = 0, n3?:number): number{
+
+} */
+
+interface Usuarios {
+  nombre: string;
+}
+
+type DatosEjemplo = {
+  nombreEmpresa: string;
+};
+
+// A la interfaz le puedo añadir elementos con llamarla, el type, una vez es declarado, se queda asi siempre.
+interface Usuarios {
+  edad: number;
+} // ---> No se queja, porque a lo que habia antes, le añadi un nuevo parametro, ahora tiene nombre y edad.
+
+const edades = new Map<string, number>();
+edades.set("Antonio", 56);
+edades.has("Antonio"); // true
+
+interface Datos {
+  nombre: string;
+  email: string;
+  cp: number;
+}
+
+// EJ crear map cuya clave sea nombre y valor un array de Datos
+const misUsuarios = new Map<string, Datos[]>();
+
+misUsuarios.set("Antonio", [
+  {
+    nombre: "Antonio Fernandez Carvajal",
+    email: "antoniofdez@gmail.com",
+    cp: 18302,
+  },
+]);
+
+const mySet = new Set<number>();
+mySet.add(19);
+
+
