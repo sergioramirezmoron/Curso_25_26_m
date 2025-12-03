@@ -33,9 +33,6 @@ export const createProyectoBooking = () => {
   const cache = new Map(sacarLocalStorage("cache") || []);
   const reservas = new Map(sacarLocalStorage("carritoReserva") || []);
 
-  // Container reserva general
-  let containerReservaGlobal;
-
   // Renderizar header y footer
   const renderHeader = () => {
     const header = document.createElement("header");
@@ -132,9 +129,10 @@ export const createProyectoBooking = () => {
     reservas.set(hotel.name, object);
     guardarLocalStorage("carritoReserva", reservas);
 
-    if (containerReservaGlobal) {
-      containerReservaGlobal.innerHTML = "";
-      containerReservaGlobal.appendChild(renderReserva());
+    const container = document.getElementById("reserva-container");
+    if (container) {
+      container.innerHTML = "";
+      container.appendChild(renderReserva());
     }
   };
 
@@ -145,8 +143,8 @@ export const createProyectoBooking = () => {
 
   // reserva
   const renderReserva = () => {
-    containerReservaGlobal = document.createElement("div");
-    const containerReserva = containerReservaGlobal;
+    const containerReserva = document.createElement("div");
+    containerReserva.id = "reserva-container";
     const title = document.createElement("h2");
     title.textContent = "Reserva";
     containerReserva.appendChild(title);
