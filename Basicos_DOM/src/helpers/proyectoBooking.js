@@ -91,6 +91,8 @@ export const createProyectoBooking = () => {
     if (!arrayHoteles) return null;
     arrayHoteles.forEach((hotel) => {
       const card = document.createElement("div");
+      card.style = "border: 1px solid #ccc; padding: 10px; text-align: center;";
+      card.style.cursor = "pointer";
       const name = document.createElement("h3");
       name.style.padding = "0px";
       name.style.margin = "10px";
@@ -150,6 +152,8 @@ export const createProyectoBooking = () => {
     containerReserva.appendChild(title);
     [...reservas.values()].forEach((reserva) => {
       const reservaCard = document.createElement("div");
+      reservaCard.style =
+        "border: 1px solid #ccc; padding: 10px; text-align: center;";
       const reservaNombre = document.createElement("h3");
       reservaNombre.textContent = reserva.nombre;
       const reservaHuespedes = document.createElement("p");
@@ -162,6 +166,7 @@ export const createProyectoBooking = () => {
       reservaIva.textContent = `IVA(10%): ${reserva.iva}€`;
       const reservaTotal = document.createElement("p");
       reservaTotal.textContent = `Total: ${reserva.total}€`;
+      reservaTotal.style.color = "green";
       reservaCard.appendChild(reservaNombre);
       reservaCard.appendChild(reservaHuespedes);
       reservaCard.appendChild(reservaStars);
