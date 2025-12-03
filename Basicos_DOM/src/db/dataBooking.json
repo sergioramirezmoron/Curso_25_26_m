@@ -1,0 +1,82 @@
+{
+  "cities": [
+    { "id": 1, "name": "Granada" },
+    { "id": 2, "name": "Madrid" },
+    { "id": 3, "name": "Barcelona" }
+  ],
+  "hotels": [
+    {
+      "id": 1,
+      "cityId": 1,
+      "name": "Hotel Alhambra Central",
+      "stars": 4,
+      "maxGuests": 3,
+      "pricePerGuest": 45.0,
+      "description": "Céntrico, a pocos minutos de la Alhambra. Habitaciones con vistas y desayuno opcional.",
+      "image": "[https://placehold.co/600x400?text=Alhambra+Central](https://placehold.co/600x400?text=Alhambra+Central)",
+      "availableRanges": [
+        { "from": "2022-12-01", "to": "2026-03-31" },
+        { "from": "2026-05-01", "to": "2026-09-30" }
+      ]
+    },
+    {
+      "id": 2,
+      "cityId": 1,
+      "name": "Pensión Albaicín",
+      "stars": 2,
+      "maxGuests": 2,
+      "pricePerGuest": 30.0,
+      "description": "Alojamiento acogedor en el barrio del Albaicín. Ideal para escapadas económicas.",
+      "image": "[https://placehold.co/600x400?text=Pension+Albaicin](https://placehold.co/600x400?text=Pension+Albaicin)",
+      "availableRanges": [{ "from": "2025-11-15", "to": "2026-02-28" }]
+    },
+    {
+      "id": 3,
+      "cityId": 2,
+      "name": "Gran Vía Palace",
+      "stars": 5,
+      "maxGuests": 4,
+      "pricePerGuest": 90.0,
+      "description": "Lujo en el corazón de Madrid. Spa, restaurante y habitaciones amplias.",
+      "image": "[https://placehold.co/600x400?text=Gran+Via+Palace](https://placehold.co/600x400?text=Gran+Via+Palace)",
+      "availableRanges": [{ "from": "2025-12-10", "to": "2026-04-30" }]
+    },
+    {
+      "id": 4,
+      "cityId": 2,
+      "name": "Hostal Centro Sol",
+      "stars": 3,
+      "maxGuests": 3,
+      "pricePerGuest": 50.0,
+      "description": "Buena relación calidad-precio y excelente comunicación con transporte público.",
+      "image": "[https://placehold.co/600x400?text=Hostal+Centro+Sol](https://placehold.co/600x400?text=Hostal+Centro+Sol)",
+      "availableRanges": [{ "from": "2025-11-01", "to": "2026-12-31" }]
+    },
+    {
+      "id": 5,
+      "cityId": 3,
+      "name": "SeaSide Boutique",
+      "stars": 4,
+      "maxGuests": 2,
+      "pricePerGuest": 75.0,
+      "description": "Hotel boutique cerca de la playa y del paseo marítimo.",
+      "image": "[https://placehold.co/600x400?text=SeaSide+Boutique](https://placehold.co/600x400?text=SeaSide+Boutique)",
+      "availableRanges": [
+        { "from": "2025-05-01", "to": "2025-12-31" },
+        { "from": "2026-04-01", "to": "2026-10-31" }
+      ]
+    },
+    {
+      "id": 6,
+      "cityId": 3,
+      "name": "Hostal Rambla",
+      "stars": 2,
+      "maxGuests": 3,
+      "pricePerGuest": 28.5,
+      "description": "Económico y cercano a las Ramblas. Opción práctica para viajeros con bajo presupuesto.",
+      "image": "[https://placehold.co/600x400?text=Hostal+Rambla](https://placehold.co/600x400?text=Hostal+Rambla)",
+      "availableRanges": [{ "from": "2025-11-20", "to": "2026-02-20" }]
+    }
+  ],
+  "bookings": []
+}
