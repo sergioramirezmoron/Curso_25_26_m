@@ -1,6 +1,6 @@
-import { createProyectoBooking } from "./helpers/proyectoBooking";
+import { createBookingCoches } from "./helpers/bookingCoches";
 
 export default function createApp() {
   const appDiv = document.getElementById("app");
-  appDiv.appendChild(createProyectoBooking().render());
+  appDiv.appendChild(createBookingCoches().render());
 }

@@ -71,3 +71,4 @@ export function createEjercicio8() {
     render,
   };
 }
+

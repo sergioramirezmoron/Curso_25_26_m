@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "server:up": "json-server --watch src/db/dataBooking.json --port 1492"
+    "server:up": "json-server --watch src/db/dataEjChati.json --port 1492"
   },
   "devDependencies": {
     "vite": "^7.2.4"

@@ -1,0 +1,233 @@
+:root {
+  --primary-color: #e50914;
+  --background-color: #141414;
+  --card-bg: #1f1f1f;
+  --text-color: #ffffff;
+  --text-secondary: #b3b3b3;
+  --font-family: "Inter", system-ui, -apple-system, sans-serif;
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* =========================================
+   PARTE 4: ESTRUCTURA PRINCIPAL (app.js)
+   ========================================= */
+
+/* Header de la aplicación */
+.header {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+}
+
+.header h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+/* Contenedor principal */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Contenedor de filtros (Buscador + Ordenación) */
+.filters-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+/* Buscador */
+.search-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: #404040;
+}
+
+/* Selector de ordenación */
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sort-select {
+  padding: 0.8rem 2rem 0.8rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 1em;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* Contenedor de la lista de películas */
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+/* =========================================
+   PARTE 5: COMPONENTE MOVIECARD (MovieCard.js)
+   ========================================= */
+
+/* Tarjeta de película individual */
+.movie-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Imagen del póster */
+.movie-poster {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  display: block;
+}
+
+/* Contenedor de información de la tarjeta */
+.movie-info {
+  padding: 1rem;
+}
+
+/* Título de la película */
+.movie-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Puntuación */
+.movie-rating {
+  color: #fbbf24;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Fecha de lanzamiento */
+.movie-date {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+/* =========================================
+   PARTE 7: ESTADOS Y STORAGE (storage.js / MovieCard.js)
+   ========================================= */
+
+/* Estado: Película vista (se aplica al hacer click) */
+.movie-watched {
+  opacity: 0.4;
+  filter: grayscale(100%);
+}
+
+.movie-watched::after {
+  content: "VISTA";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  border: 4px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+/* =========================================
+   UTILIDADES
+   ========================================= */
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filters-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sort-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+}

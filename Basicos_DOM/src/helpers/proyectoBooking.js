@@ -140,6 +140,8 @@ export const createProyectoBooking = () => {
 
   const finishReserva = () => {
     reservas.clear();
+    cache.clear();
+    guardarLocalStorage("cache", cache);
     guardarLocalStorage("carritoReserva", reservas);
   };
 
